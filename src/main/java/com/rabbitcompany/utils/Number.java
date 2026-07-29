@@ -6,11 +6,11 @@ import java.math.RoundingMode;
 public class Number {
 
 	public static boolean isNumeric(String str) {
+		if (str == null || str.isEmpty()) return false;
 		try {
-			Double.parseDouble(str);
+			new BigDecimal(str.trim());
 			return true;
-		} catch (NumberFormatException ignored) {
-		}
+		} catch (NumberFormatException ignored) {}
 		return false;
 	}
 
